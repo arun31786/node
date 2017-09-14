@@ -1,0 +1,39 @@
+	cmd-> mongod --dbpath data
+
+		port = 27017
+
+	Syntax:
+		use mydb	: create and switch to database names as mydb
+		db			: check your current selected database
+		show dbs	: check databases list
+		
+		use mydb
+		db.dropDatabase()	: drop database
+		
+		show collections	: check collections
+		db.createCollection("COLLECTION_NAME")
+		db.COLLECTION_NAME.drop()
+		
+		db.COLLECTION_NAME.insert(document)
+	find
+		db.COLLECTION_NAME.find()
+		db.mycol.find().pretty()
+		
+		AND in MongoDB
+			db.mycol.find({"key1":"value1", "key2":"value2"}).pretty()
+		< and >		
+			db.emp.find({"age":{$lt:60}}).pretty();// lt for less than
+			db.emp.find({"age":{$lte:60}}).pretty();// lte for less than and equals to
+		OR in MongoDB
+			where key>10 AND (key1 = 'value1' OR key2 = 'value2')
+
+			db.mycol.find({"key": {$gt:10}, $or: [{"key1": "value1"},{"key2": "value2"}]}).pretty()
+		
+	update
+		db.COLLECTION_NAME.update({'key1':'value1'}, {$set:{'key2':'value2'}})
+	
+	remove
+		db.mycol.remove({'key1':'value1'})
+
+	sort
+		db.mycol.find().sort({"key":1})

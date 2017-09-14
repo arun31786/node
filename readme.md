@@ -42,3 +42,8 @@
 		* Client (js)
 		* DB (js)
 
+MEAN:
+	Mongo- database
+	Express - server
+	js framework - angular/react
+	Node - platform to run js on server side
